@@ -1,6 +1,5 @@
-from fastapi import FastAPI, UploadFile, File, HTTPException
+from fastapi import FastAPI, UploadFile, File, HTTPException, Form
 from fastapi.middleware.cors import CORSMiddleware
-import requests
 from utils.pdf import extract_text
 from services.gemini import analyze_resume
 import os
@@ -22,19 +21,14 @@ def home():
     return {"message": "AI Resume Analyzer backend running"}
 
 
-@app.get("/models")
-def list_models():
-    """Optional: See available Gemini models"""
-    url = f"https://generativelanguage.googleapis.com/v1beta/models?key={API_KEY}"
-    response = requests.get(url)
-    return response.json()
-
-
 @app.post("/analyze")
-async def analyze(file: UploadFile = File(...)):
+async def analyze(
+    file: UploadFile = File(...),
+    job_description: str = Form(...)
+    ):
     try:
         text = extract_text(file.file)
-        return analyze_resume(text)
+        return analyze_resume(text,job_description)
 
     except HTTPException as e:
         raise e

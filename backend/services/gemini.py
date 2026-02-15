@@ -9,7 +9,7 @@ API_KEY = os.getenv("GEMINI_API_KEY")
 if not API_KEY:
     raise ValueError("GEMINI_API_KEY not found in .env file")
 
-def analyze_resume(text):
+def analyze_resume(resume,job):
 
     prompt = f"""
 You are an ATS resume analyzer.
@@ -24,7 +24,10 @@ Return ONLY valid JSON:
 }}
 
 Resume:
-{text}
+{resume}
+
+JOB DESCRIPTION:
+{job}
 """
 
     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={API_KEY}"
@@ -42,9 +45,12 @@ Resume:
         ]
     }
 
-    response = requests.post(url, headers=headers, json=data)
+    response = requests.post(url, headers=headers, json=data, timeout=60)
 
     result = response.json()
+    
+    if "candidates" not in result:
+        raise Exception(result)
 
     raw_text = result["candidates"][0]["content"]["parts"][0]["text"]
 

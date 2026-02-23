@@ -1,5 +1,6 @@
-# <p align="center">
+# <h1 align="center">
   <img src="https://raw.githubusercontent.com/Himanshimittal051104/CareerLens/main/frontend/public/logo.png" height="60" style="vertical-align: middle; margin-right: 10px;" />
+  </h1>
   <span style="font-size:34px;font-weight:700;">CareerLens</span>
   <p align="center">AI Resume Analyzer</p>
 </p>

@@ -21,7 +21,7 @@ export default function Navbar() {
         <Link href="/about" className="  font-semibold text-xl cursor-pointer" >About</Link>
         <div className="bg-purple-950 p-4 text-xl rounded-full text-white  font-semibold ">
           {session ? (
-            <button onClick={() => signOut()} className="cursor-pointer">Logout</button>
+            <button onClick={() => signOut()} className="cursor-pointer">Log Out</button>
           ) : (
             <button onClick={() => signIn("google")} className="cursor-pointer">Log In</button>
           )}

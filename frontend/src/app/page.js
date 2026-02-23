@@ -16,8 +16,8 @@ export default function Home() {
       <div className="flex items-center gap-16 px-32 h-[100vh]">
         {/* left */}
         <div className=" text-purple-950 flex-1 h-[40vh]">
-          <h1 className="font-bold text-5xl my-4">Optimize Your Resume. Land Better Interviews.</h1>
-          <p className="mb-4 ">Upload your resume and job description to get an instant ATS score, skill gap analysis,
+          <h1 className="font-bold text-5xl my-6">Optimize Your Resume. Land Better Interviews.</h1>
+          <p className="mb-4 leading-relaxed">Upload your resume and job description to get an instant ATS score, skill gap analysis,
             and AI-powered suggestions to improve your chances of getting shortlisted.</p>
           <button className="rounded-full p-4 bg-purple-950 text-white text-lg font-semibold cursor-pointer" onClick={() => scrollToSection("analyze")}>Get Started for free</button>
         </div>

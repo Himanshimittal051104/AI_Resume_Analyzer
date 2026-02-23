@@ -4,7 +4,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="py-32 px-20 text-[rgba(210,232,35,1)] scroll-mt-32 bg-[#254F1A] flex gap-16 min-h-screen  items-center"
+      className="py-32 px-32 text-[rgba(210,232,35,1)] scroll-mt-32 bg-[#254F1A] flex gap-16 min-h-screen  items-center"
     >
         <div className="flex-1 mt-16">
       <h2 className="text-5xl font-bold mb-6">

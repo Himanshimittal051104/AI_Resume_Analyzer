@@ -1,5 +1,5 @@
 # <p>
-  <img src="frontend/public/logo.png" height="60" style="vertical-align:middle;"/>
+  <img src="https://raw.githubusercontent.com/Himanshimittal051105/CareerLens/main/frontend/public/logo.png" height="60" style="vertical-align:middle;"/>
 <span style="vertical-align:middle; font-size:32px; font-weight:bold;" >CareerLens – AI Resume Analyzer</span>
 </p>
 

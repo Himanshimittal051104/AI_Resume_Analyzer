@@ -49,7 +49,7 @@ Protected routes for analysis & results
 
 ### 📊 Results Page
 
--Dedicated result route
+- Dedicated result route
 - ATS score display
 - Strengths / Missing Skills / Suggestions cards
 - Temporary result persistence using localStorage
@@ -76,7 +76,7 @@ Protected routes for analysis & results
 3. Pastes job description
 4. Backend extracts resume text
 5. AI compares resume with job description
-6. Generates:
+### 6. Generates:
   - ATS Score
   - Strengths
   - Missing Skills

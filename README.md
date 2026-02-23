@@ -1,6 +1,6 @@
 # <p>
-  <img src="frontend/public/logo.png" height="60" />
-<h1 >CareerLens – AI Resume Analyzer</h1>
+  <img src="frontend/public/logo.png" height="60" style="vertical-align:middle;"/>
+<span style="vertical-align:middle;" >CareerLens – AI Resume Analyzer</span>
 </p>
 
 CareerLens is a full-stack AI-powered resume analysis platform that helps job seekers evaluate how well their resume matches a job description and receive actionable improvement suggestions. It simulates ATS-style matching and provides insights to improve resume quality and hiring chances.

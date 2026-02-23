@@ -1,4 +1,4 @@
-# <div >
+# <div className="flex">
   <img src="frontend/public/logo.png" height="120" />
 <h1 >CareerLens – AI Resume Analyzer</h1>
 </div>

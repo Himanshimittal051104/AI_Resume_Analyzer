@@ -1,116 +1,265 @@
-# 🤖 AI Resume Analyzer (ATS + JD Matching)
+# PropWise AI 🏠
 
-An AI-powered Resume Analyzer that evaluates resumes using ATS logic and matches them against a Job Description using Google Gemini.
+PropWise AI is a full-stack machine learning web application that predicts house prices in Bangalore using XGBoost.
 
-Users can upload their resume PDF, paste a job description, and receive:
+**This project combines Machine Learning, FastAPI backend, and a Next.js frontend into a real-world end-to-end system.**
 
-- ATS Score  
-- Key strengths  
-- Missing technical skills  
-- Personalized improvement suggestions  
+---
+
+## 🔗 Live Links
+
+Frontend (Vercel): https://propwise-ai.vercel.app/
+
+Backend API (Render): https://propwise-ai.onrender.com/docs
+
+---
+
+## ✨ What this project does
+
+You enter:
+
+- Location
+- BHK 
+- Bathrooms
+- Total Sqft
+
+and PropWise AI instantly predicts the **estimated house price (in Lakhs)** using an ML model served via FastAPI.
 
 ---
 
 ## 🚀 Features
 
-- 📄 PDF Resume Upload  
-- 🧠 AI-based ATS Scoring  
-- 📝 Job Description Matching  
-- ✅ JSON structured output  
-- ⚡ FastAPI backend  
-- 🔐 Environment-based API key handling  
+- XGBoost-based house price prediction model trained on Bengaluru housing data
+- Advanced feature engineering, outlier removal, and log-transformed target optimization
+- Location-based one-hot encoding for accurate price modeling
+- FastAPI backend serving real-time ML predictions via REST API
+- Secure Google Authentication (NextAuth) with protected routes
+- User-specific prediction history persisted in MongoDB Atlas
+- Interactive dashboard with real-time prediction analytics
+- Session-based access control for secure API endpoints
+- Loading states, form validation, and improved UX handling
+- Full-stack architecture: Notebook → ML Model → API → Database → UI
+- Backend deployed on Render, Frontend deployed on Vercel
+
+---
+
+## 📊 Model Performance
+
+- XGBoost Regressor  
+- RMSE ≈ **45 Lakhs** (after feature engineering, log-transform & outlier removal)
+
+---
+
+## 🧠 ML Pipeline
+
+- Raw Bangalore housing dataset
+- Data cleaning + null handling
+- Feature engineering
+- Outlier removal
+- Log transformation on target
+- One-hot encoding
+- XGBoost training
+- Model serialization (Joblib)
+- FastAPI inference
+- React frontend consumption
 
 ---
 
 ## 🛠 Tech Stack
 
+### Machine Learning
+- Python
+- Pandas / NumPy
+- Scikit-learn
+- XGBoost
+
 ### Backend
-- FastAPI  
-- Python  
-- pdfplumber  
-- Google Gemini API  
-- REST API  
+- FastAPI
+- Joblib
+- Pydantic
+- Render Deployment
+
+### Frontend
+- Next.js (React)
+- Tailwind CSS
+- React Select
+- Vercel Deployment
+
+### Tools
+- Git & GitHub
 
 ---
 
-## 📂 Project Structure
+## 🏗 Architecture
 ```md
-backend/
-│
-├── main.py
-├── services/
-│ └── gemini.py
-├── utils/
-│ └── pdf.py
-├── .env
-└── requirements.txt
+Frontend (Next.js + Tailwind)
+↓
+FastAPI ML Backend (XGBoost Model)
+↓
+MongoDB Atlas (User Prediction Storage)
+
+Authentication handled via NextAuth (Google OAuth).
+Each prediction is linked to the logged-in user and displayed on a protected dashboard.
 ```
 
 ---
 
-## ⚙️ Setup Instructions
+## ▶ How to run locally
 
-### 1️⃣ Clone repo
-
+### Clone the repo and move inside folder:
 ```bash
-git clone <your-repo-url>
-cd AI_Resume_Analyzer/backend
+git clone https://github.com/Himanshimittal051104/PropWise_AI.git
+cd PropWise_AI
 ```
 
-### 2️⃣ Create virtual environment
+### Start Backend
 
+Go to backend folder:
+```bash
+cd backend
+```
+
+Create virtual environment (optional but recommended):
 ```bash
 python -m venv venv
-venv\Scripts\activate
 ```
 
-### 3️⃣ Install dependencies
+
+Activate it:
+**Windows**
+```bash
+venv\Scripts\activate
+```
+**Mac/Linux**
+```bash
+source venv/bin/activate
+```
+
+Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4️⃣ Create .env
+Start backend server:
 ```bash
-GEMINI_API_KEY=your_api_key_here
+uvicorn app.main:app --reload
 ```
 
-### 5️⃣ Run backend
-```bash
-uvicorn main:app --reload
+Backend will run at:
+```text
+http://127.0.0.1:8000
 ```
 
-### Open:
-``` text
-http://127.0.0.1:8000/docs
+### Start Frontend
+
+Go to frontend folder:
+```bash
+cd frontend
+```
+Install packages:
+```bash
+npm install
+```
+
+Start frontend:
+```bash
+npm run dev
+```
+
+Open in browser:
+```text
+http://localhost:3000
 ```
 
 ---
 
-## 📌 API Endpoint
-POST /analyze
+## 🌐 Deployment 
 
-Form Data:
+### Backend (Render)
 
-file → Resume PDF
+FastAPI backend is deployed on Render with GitHub auto-deploy enabled.
 
-job_description → Job text
+Live API:
+```bash
+https://propwise-ai.onrender.com/docs
+```
 
-Returns:
+Features:
+
+- Live REST API
+- Input validation using Pydantic
+- Unknown locations mapped to `other`
+- Log-transformed target with inverse inference
+- Minimum price safeguard
+
+### Frontend (Vercel)
+
+Next.js frontend deployed on Vercel.
+
+Connected to backend using environment variable:
+```bash
+NEXT_PUBLIC_API_URL=https://propwise-ai.onrender.com
+```
+
+---
+
+## 🧪 Backend API Demo
+
+FastAPI Swagger UI showing live prediction endpoint:
+
+![Swagger Demo](backend/assets/swagger_live_prediction.png)
+
+---
+
+## 📸 Screenshots
+
+![Home Page](frontend/public/screenshots/home.png)
+![Predict Page](frontend/public/screenshots/predict.png)
+![Dashboard](frontend/public/screenshots/dashboard_preview.png)
+
+---
+
+## 📥 Sample API Request
+```json
 {
-  "ats_score": 85,
-  "strengths": [],
-  "missing_skills": [],
-  "suggestions": []
+  "location": "Whitefield",
+  "bhk": 2,
+  "bathroom": 2,
+  "total_sqft": 1200
 }
+```
 
 ---
 
-## 🔮 Upcoming
+## 📤 Sample API Response
+```json
+{
+  "predicted_price_lakhs": 78.4
+}
+```
 
-- Frontend (React / Next.js)
-- UI Resume Upload
-- Result visualization
-- Deployment
+---
+
+## 📌 Why I built this
+
+This project helped me understand:
+
+- Deploying ML models to production
+- FastAPI backend development
+- React + Next.js integration
+- Real-world form handling
+- API communication
+- Dashboard analytics
+- Full-stack deployment workflow
+
+---
+
+## 🔮 Future Improvements
+
+- Charts for price trends
+- Multi-city support
+- Improved UI animations
+- Error messaging
 
 ---
 

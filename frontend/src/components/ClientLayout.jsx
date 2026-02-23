@@ -9,7 +9,7 @@ export default function ClientLayout({ children }) {
 
   const backgroundColors = {
     "/":"bg-emerald-100",
-    "/about":"bg-gradient-to-br from-purple-200 to-pink-200"
+    "/about":"bg-pink-200"
   };
 
   const pageBgClass = backgroundColors[pathname] || "";
@@ -18,7 +18,7 @@ export default function ClientLayout({ children }) {
         <div className={`${pageBgClass} min-h-screen `}>
           <Providers>
           <Navbar />
-          {children}
+         <main > {children}</main>
           <Footer />
           </Providers>
         </div>

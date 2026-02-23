@@ -15,7 +15,7 @@ export default function Footer() {
         element?.scrollIntoView({ behavior: "smooth" });
       };
     return (
-        <footer className="bg-slate-900 text-slate-300 px-32">
+        <footer className="bg-slate-900 text-slate-300 px-32 ">
             <div className=" mx-auto px-10 py-16 grid md:grid-cols-4 gap-10">
 
                 {/* Brand */}

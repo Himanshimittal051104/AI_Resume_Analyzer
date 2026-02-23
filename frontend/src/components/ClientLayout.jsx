@@ -8,8 +8,9 @@ export default function ClientLayout({ children }) {
   const pathname = usePathname();
 
   const backgroundColors = {
-    "/":"bg-emerald-100",
-    "/about":"bg-pink-200"
+    "/":"bg-emerald-200",
+    "/about":"bg-pink-200",
+    "/result":"bg-pink-200"
   };
 
   const pageBgClass = backgroundColors[pathname] || "";

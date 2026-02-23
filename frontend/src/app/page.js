@@ -23,15 +23,19 @@ export default function Home() {
         </div>
 
         {/* right */}
-        <div className=" text-black flex-1 h-[60vh] ">
+        <div className="flex-1 bg-white w-full h-[50%] rounded-2xl">
+          <img src="/screenshots/result.png" alt="result"   className="rounded-2xl flex-1 my-auto h-full"></img>
         </div>
+        {/* <img src="/screenshots/result.png" alt="result" width="96"  className="rounded-2xl flex-1 my-auto"></img> */}
       </div>
-      <div className="bg-purple-950  min-h-screen text-[rgba(210,232,35,1)] flex items-center gap-16 px-32 " id="analyze">
-        <div className=" flex-1 h-[60vh]"></div>
+      <div className="bg-purple-950  min-h-screen text-[rgba(210,232,35,1)] flex items-center gap-16 px-32 py-20 pb-32 " id="analyze">
+       <div className="flex-1 bg-white w-full h-[60vh] mt-40 rounded-3xl">
+          <img src="/screenshots/scanning.avif" alt="result"   className="rounded-3xl flex-1 my-auto h-full"></img>
+        </div>
         <div className="flex-1 h-[40vh]">
-          <h1 className="font-bold text-5xl my-4">Is Your Resume Job Ready ?</h1>
+          <h1 className="font-bold text-5xl  mb-4">Is Your Resume Job Ready ?</h1>
           
-          <div className="border border-dashed p-4 py-6"><UploadForm/></div>
+          <div className="border border-dashed p-4 py-10 "><UploadForm/></div>
         </div>
       </div>
       <div id="features"><Card /></div>

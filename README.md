@@ -143,33 +143,6 @@ git clone https://github.com/Himanshimittal051104/CareerLens.git
 cd CareerLens
 ```
 
-### Start Backend
-
-Go to backend folder:
-```bash
-cd backend
-```
-
-Install dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-Start backend server:
-```bash
-uvicorn main:app --reload
-```
-
-Backend will run at:
-```text
-http://127.0.0.1:8000
-```
-
-Create .env.local:
-```text
-GEMINI_API_KEY=your_api_key
-```
-
 ### Start Frontend
 
 Go to frontend folder:
@@ -198,6 +171,33 @@ NEXTAUTH_SECRET=your_secret
 NEXTAUTH_URL=http://localhost:3000
 GOOGLE_CLIENT_ID=your_id
 GOOGLE_CLIENT_SECRET=your_secret
+```
+
+### Start Backend
+
+Go to backend folder:
+```bash
+cd backend
+```
+
+Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+Start backend server:
+```bash
+uvicorn main:app --reload
+```
+
+Backend will run at:
+```text
+http://127.0.0.1:8000
+```
+
+Create .env.local:
+```text
+GEMINI_API_KEY=your_api_key
 ```
 
 ---

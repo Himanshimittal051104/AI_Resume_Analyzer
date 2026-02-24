@@ -3,9 +3,10 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="py-32 px-32 text-[rgba(210,232,35,1)] scroll-mt-32 bg-[#254F1A] flex gap-16 min-h-screen  items-center"
+      className="py-32 px-32 text-purple-950 scroll-mt-32 bg-[#254F1A] gap-16 min-h-screen "
     >
-        <div className="flex-1 mt-16">
+      
+        <div className="flex-1 mt-16 bg-[rgba(210,232,35,1)] flex flex-col items-center justify-center p-12 rounded-full w-[70vw] mx-auto">
       <h2 className="text-5xl font-bold mb-6">
         About CareerLens
       </h2>
@@ -25,12 +26,12 @@ export default function AboutSection() {
 
       <Link
         href="/about"
-        className="text-slate-900 bg-[rgba(210,232,35,1)] text-lg p-4 rounded-full font-semibold"
+        className="bg-purple-950 text-white  text-lg p-4 rounded-full font-semibold"
       >
         Learn more about CareerLens
       </Link>
       </div>
-      <div className="flex-1"></div>
+      
     </section>
   );
 }

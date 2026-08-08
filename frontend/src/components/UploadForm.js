@@ -62,7 +62,7 @@ export default function UploadForm() {
               if (!file) return;
 
               if (file.size > 5 * 1024 * 1024) {
-                alert("File must be less than 5MB");
+                alert("File must be less than 5 MB");
                 e.target.value = "";
                 return;
               }

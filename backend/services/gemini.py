@@ -30,7 +30,7 @@ JOB DESCRIPTION:
 {job}
 """
 
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={API_KEY}"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent?key={API_KEY}"
     
     headers = {
             "Content-Type": "application/json"

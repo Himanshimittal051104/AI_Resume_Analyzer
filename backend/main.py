@@ -34,4 +34,5 @@ async def analyze(
         raise e
 
     except Exception as e:
+        print("ERROR:", repr(e))
         raise HTTPException(status_code=500, detail=str(e))

@@ -43,7 +43,7 @@ export default function UploadForm() {
 
       <form onSubmit={handleSubmit} >
 
-        <p className="font-semibold mb-4">Upload your resume (PDF only, max 5MB)</p>
+        <p className="font-semibold mb-4">Upload your resume (PDF only, max 5 MB)</p>
 
         <textarea
           placeholder="Paste Job Description..."

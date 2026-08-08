@@ -195,7 +195,7 @@ Backend will run at:
 http://127.0.0.1:8000
 ```
 
-Create .env.local:
+Create .env:
 ```text
 GEMINI_API_KEY=your_api_key
 ```

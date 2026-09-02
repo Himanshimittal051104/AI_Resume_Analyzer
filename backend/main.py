@@ -22,7 +22,7 @@ def home():
 
 
 @app.post("/analyze")
-async def analyze(
+def analyze(
     file: UploadFile = File(...),
     job_description: str = Form(...)
     ):
